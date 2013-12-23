@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings>
+	<language id="it.coloriamoci.textpattern">
+		<root-zone>language-root.xml</root-zone>
+		<name>Textpattern</name>
+		<detectors>
+			<extension>txp</extension>
+		</detectors>
+	</language>
+</settings>
