@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codesense version="1.0">
+	<set name="com.macrabbit.sugardev.tags">
+		<!-- Default behavior -->
+		<behavior>
+			<append-dynamic>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>>$1&lt;/${completion}></transform-into>
+			</append-dynamic>
+			<partial-confirm characters="-"/>
+		</behavior>
+		
+		<completion string="action-alias">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="action">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="capture">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> number="$1" name="$2"/></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="category">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" show="$2">$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="codesense">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: version="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="collection">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="complete-match">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: capture="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="completion">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> string="$1"/></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="confirm">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> characters="$1"/></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="partial-confirm">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> characters="$1"/></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="extension">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: casesensitive="true"}>$2&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="filename">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: casesensitive="true"}>$2&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="include">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> ${1:syntax|collection}="$2" $3/></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="injection">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="$1" selector="$2" action="$3">$4&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="language">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1">$2&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="match-content">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: lines="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="recipe">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="set">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="setting">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="snippet">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> id="$1" category="$2">$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="syntax">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="text-trigger">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: key-equivalent="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="tool">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> type="$1" id="$2" category="$3">$4&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="use-template">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> key="$1" /></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="zone">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into>${1: name="$2"}>$3&lt;/${completion}></transform-into>
+				</append-dynamic>
+			</behavior>
+		</completion>
+		
+		<completion string="action-identifier" />
+		<completion string="action-recipes" />
+		<completion string="append-dynamic" />
+		<completion string="append-static" />
+		<completion string="behavior" />
+		<completion string="class" />
+		<completion string="combo"/>
+		<completion string="completions" />
+		<completion string="cut-off"/>
+		<completion string="detectors"/>
+		<completion string="default-extension"/>
+		<completion string="default-mime-type"/>
+		<completion string="end-selector" />
+		<completion string="ends-with" />
+		<completion string="expression" />
+		<completion string="formatting" />
+		<completion string="injections" />
+		<completion string="image" />
+		<completion string="itemizer" />
+		<completion string="key-equivalent"/>
+		<completion string="label" />
+		<completion string="language-context"/>
+		<completion string="library" />
+		<completion string="matched-suffix"/>
+		<completion string="main-action-selector" />
+		<completion string="name"/>
+		<completion string="palette-label" />
+		<completion string="provider" />
+		<completion string="require-suffix" />
+		<completion string="root-zone"/>
+		<completion string="rules" />
+		<completion string="script"/>
+		<completion string="selector" />
+		<completion string="settings" />
+		<completion string="setup" />
+		<completion string="sort-template"/>
+		<completion string="start-selector" />
+		<completion string="starts-with" />
+		<completion string="subrecipes" />
+		<completion string="subzones" />
+		<completion string="syntax-context" />
+		<completion string="template" />
+		<completion string="text" />
+		<completion string="title" />
+		<completion string="tool-recipes" />
+		<completion string="transform-into"/>
+		<completion string="value" />
+		<completion string="when-disabled" />
+		<completion string="zones" />
+	</set>
+	
+	<set name="com.macrabbit.sugardev.tags.standalone">
+		<behavior>
+			<append-dynamic>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>/></transform-into>
+			</append-dynamic>
+		</behavior>
+		
+		<completion string="false"/>
+		<completion string="include-root-recipes"/>
+		<completion string="true"/>
+		<completion string="no-value"/>
+	</set>
+	
+	<!-- Sugar tag attributes -->
+	
+	<behavior>
+		<append-dynamic>
+			<matched-suffix>(\s*=)|[^=]</matched-suffix>
+			<transform-into>(?1::="$1"$0)</transform-into>
+		</append-dynamic>
+		<confirm characters="="/>
+		<partial-confirm characters="-"/>
+	</behavior>
+	
+	<set name="com.macrabbit.sugardev.action-alias.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.action.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.capture.attributes">
+		<completion string="number"/>
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.category.attributes">
+		<completion string="id"/>
+		<completion string="show"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.codesense.attributes">
+		<completion string="version"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.collection.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.complete-match.attributes">
+		<completion string="capture"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.completion.attributes">
+		<completion string="string"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.confirm.attributes">
+		<completion string="characters"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.partial-confirm.attributes">
+		<completion string="characters"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.extension.attributes">
+		<completion string="casesensitive"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.filename.attributes">
+		<completion string="casesensitive"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.include.attributes">
+		<completion string="collection"/>
+		<completion string="syntax"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.injection.attributes">
+		<completion string="name"/>
+		<completion string="selection"/>
+		<completion string="action"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.language.attributes">
+		<completion string="id"/>
+		<completion string="hidden"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.match-content.attributes">
+		<completion string="lines"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.recipe.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.set.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.setting.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.snippet.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.subzones.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.syntax.attributes">
+		<completion string="name"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.text-trigger.attributes">
+		<completion string="key-equivalent"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.tool.attributes">
+		<completion string="id"/>
+		<completion string="category"/>
+		<completion string="type"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.use-template.attributes">
+		<completion string="key"/>
+	</set>
+	
+	<set name="com.macrabbit.sugardev.zone.attributes">
+		<completion string="name"/>
+	</set>
+</codesense>

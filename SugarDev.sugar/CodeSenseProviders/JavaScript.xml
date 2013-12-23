@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codesense>
+	
+	<!-- Variables and functions -->
+	<provider>
+		<selector>js, js *:not(string,string *,comment,variable,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.root-variables</completions>
+		<completions>com.macrabbit.sugardev.js.root-methods</completions>
+		<completions>com.macrabbit.sugardev.js.constants</completions>
+		<complete-match>(?&lt;!\.)\b[a-zA-Z]*</complete-match>
+	</provider>
+	
+	<!-- Global properties -->
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.global-properties</completions>
+		<complete-match capture="1">\.([a-zA-Z]*)</complete-match>
+	</provider>
+	
+	<!-- Object constructors -->
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.constructors</completions>
+		<complete-match capture="1">\bnew\s+([a-zA-Z]*)</complete-match>
+	</provider>
+	
+	<!-- TODO: This needs to change to support some form of variable substitution in the completion ID -->
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.action.properties</completions>
+		<complete-match capture="1">\baction\.(\w*)</complete-match>
+	</provider>
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.context.properties</completions>
+		<complete-match capture="1">\bcontext\.(\w*)</complete-match>
+	</provider>
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.lineStorage.properties</completions>
+		<complete-match capture="1">\blineStorage\.(\w*)</complete-match>
+	</provider>
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.syntaxTree.properties</completions>
+		<complete-match capture="1">\bsyntaxTree\.(\w*)</complete-match>
+	</provider>
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.itemizer.properties</completions>
+		<complete-match capture="1">\bitemizer\.(\w*)</complete-match>
+	</provider>
+	<provider>
+		<selector>js, js *:not(string,string *,comment,regex,regex *)</selector>
+		<completions>com.macrabbit.sugardev.js.textPreferences.properties</completions>
+		<complete-match capture="1">\btextPreferences\.(\w*)</complete-match>
+	</provider>
+</codesense>
