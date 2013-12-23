@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codesense version="1.0">
+	<set name="it.coloriamoci.textpattern.tags">
+		<!-- Default behavior -->
+		<behavior>
+			<append-dynamic>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>>$1&lt;/${completion}></transform-into>
+			</append-dynamic>
+			<partial-confirm characters=":_"/>
+		</behavior>
+		
+		<!-- Simply add a completion string for tags you wish to complete without default attributes: -->
+		<completion string="txp:if_comments"/>
+		
+		<!-- Define custom behaviors for tags you wish to complete with default attributes: -->
+		<completion string="txp:search_input">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> label="${1:Search}" button="${2:Search}" size="${3:20}" wraptag="${4:div}" /></transform-into>
+				</append-dynamic>
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+	</set>
+	
+	<set name="it.coloriamoci.textpattern.tags.standalone">
+		<behavior>
+			<append-dynamic>
+				<matched-suffix>(\s*)|$</matched-suffix>
+				<transform-into>/></transform-into>
+			</append-dynamic>
+			<partial-confirm characters=":_"/>
+		</behavior>
+		
+		<!-- Define completion strings for self-closing tags without default attributes here: -->
+		<completion string="txp:comment_anchor"/>
+	</set>
+	
+	<!-- Map out custom tag attributes below, just like in the bundled HTML plugin: -->
+	
+	<behavior>
+		<append-dynamic>
+			<matched-suffix>(\s*=)|[^=]</matched-suffix>
+			<transform-into>(?1::="$1"$0)</transform-into>
+		</append-dynamic>
+		<confirm characters="="/>
+		<partial-confirm characters="-"/>
+	</behavior>
+	
+	<set name="it.coloriamoci.textpattern.txp:search_input.attributes">
+		<completion string="button" />
+		<completion string="form" />
+		<completion string="html_id" />
+		<completion string="match" />
+		<completion string="section" />
+		<completion string="size" />
+		<completion string="label" />
+		<completion string="wraptag" />
+	</set>
+</codesense>

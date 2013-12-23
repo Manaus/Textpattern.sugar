@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codesense>
+	<!-- Textpattern tags -->
+	<provider>
+		<selector>textpattern *, textpattern tag.open, textpattern tag.self-closing</selector>
+		<completions>it.coloriamoci.textpattern.tags</completions>
+		<completions>it.coloriamoci.textpattern.tags.standalone</completions>
+		<complete-match capture="2">(&lt;)([a-zA-Z0-9:_-]*)</complete-match>
+		<require-suffix>(\s|>|^)</require-suffix>
+	</provider>
+	
+	<!-- Textpattern attributes -->
+	<provider>
+		<selector>textpattern tag.open:has-child(name:capture(tag)) > attribute-name, textpattern tag.open:has-child(name:capture(tag)) > punctuation.definition.end, textpattern tag.open:has-child(name:capture(tag)) > punctuation.definition.self-closing, textpattern tag.open:has-child(name:capture(tag)), textpattern tag.open:has-child(name:capture(tag)) > punctuation.separator.attribute</selector>
+		<completions>it.coloriamoci.textpattern.${tag}.attributes</completions>
+		<complete-match capture="2">(\s)([a-zA-Z0-9-]*)</complete-match>
+		<require-suffix>(\s|=|/?>|^)</require-suffix>
+	</provider>
+</codesense>
