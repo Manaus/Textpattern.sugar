@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <syntax name="language-root.html.textpattern">
-	
 	<zones>
+
+		<!-- Embedded PHP blocks -->
+		<zone name="embedded-php.html">
+			<starts-with>
+				<expression>(?=&lt;(?i:txp:php))</expression>
+			</starts-with>
+			<ends-with>
+				<expression>(&lt;/)((?i:txp:php))(>)</expression>
+				<capture number="0" name="tag.close.php.html"/>
+				<capture number="1" name="punctuation.definition.begin"/>
+				<capture number="2" name="entity.name"/>
+				<capture number="3" name="punctuation.definition.end"/>
+			</ends-with>
+			<subzones>
+				<zone name="tag.open.php.html">
+					<starts-with>
+						<expression>(&lt;)((?i:txp:php))</expression>
+						<capture number="1" name="punctuation.definition.begin"/>
+						<capture number="2" name="entity.name"/>
+					</starts-with>
+					<ends-with>
+						<expression>(/?)(>)</expression>
+						<capture number="1" name="punctuation.definition.self-closing"/>
+						<capture number="2" name="punctuation.definition.end"/>
+					</ends-with>
+					<subzones>
+						<include collection="tag-attributes"/>
+					</subzones>
+				</zone>
+				<include syntax="php" collection="language"/>
+			</subzones>
+		</zone>
+
+		<!-- Comments -->
+		<zone name="comment.block">
+			<starts-with>
+				<expression>(&lt;txp:hide)(\s|>)</expression>
+				<capture number="0" name="punctuation.definition.begin"/>
+			</starts-with>
+			<ends-with>
+				<expression>(&lt;/txp:hide>)</expression>
+				<capture number="0" name="punctuation.definition.end"/>
+			</ends-with>
+		</zone>
+
 		<include syntax="language-root.html" />
 	</zones>
-
 </syntax>
