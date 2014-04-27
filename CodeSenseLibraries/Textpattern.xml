@@ -2,6 +2,7 @@
 <codesense version="1.0">
 	<set name="it.coloriamoci.textpattern.tags">
 		<!-- Default behavior -->
+
 		<behavior>
 			<append-dynamic>
 				<matched-suffix>(\s*)|$</matched-suffix>
@@ -9,11 +10,169 @@
 			</append-dynamic>
 			<partial-confirm characters=":_"/>
 		</behavior>
-		
-		<!-- Simply add a completion string for tags you wish to complete without default attributes: -->
+
+		<!-- Container tags without default attributes -->
+
+		<completion string="txp:article"/>
+		<completion string="txp:article_custom"/>
+		<completion string="txp:authors"/>
+		<completion string="txp:category_list"/>
+		<completion string="txp:file_download_link"/>
+		<completion string="txp:file_download_list"/>
+		<completion string="txp:hide"/>
+		<completion string="txp:if_article_id"/>
+		<completion string="txp:if_article_image"/>
+		<completion string="txp:if_article_list"/>
+		<completion string="txp:if_category"/>
 		<completion string="txp:if_comments"/>
-		
-		<!-- Define custom behaviors for tags you wish to complete with default attributes: -->
+		<completion string="txp:if_comments_allowed"/>
+		<completion string="txp:if_comments_disallowed"/>
+		<completion string="txp:if_comments_error"/>
+		<completion string="txp:if_comments_preview"/>
+		<completion string="txp:if_custom_field"/>
+		<completion string="txp:if_different"/>
+		<completion string="txp:if_excerpt"/>
+		<completion string="txp:if_expired"/>
+		<completion string="txp:if_expires"/>
+		<completion string="txp:if_first_article"/>
+		<completion string="txp:if_first_category"/>
+		<completion string="txp:if_first_file"/>
+		<completion string="txp:if_first_image"/>
+		<completion string="txp:if_first_link"/>
+		<completion string="txp:if_first_section"/>
+		<completion string="txp:if_keywords"/>
+		<completion string="txp:if_individual_article"/>
+		<completion string="txp:if_last_article"/>
+		<completion string="txp:if_last_category"/>
+		<completion string="txp:if_last_file"/>
+		<completion string="txp:if_last_image"/>
+		<completion string="txp:if_last_link"/>
+		<completion string="txp:if_last_section"/>
+		<completion string="txp:if_search"/>
+		<completion string="txp:if_search_results"/>
+		<completion string="txp:if_thumbnail"/>
+		<completion string="txp:if_yield"/>
+		<completion string="txp:images"/>
+		<completion string="txp:linklist"/>
+		<completion string="txp:link_to_home"/>
+		<completion string="txp:php"/>
+		<completion string="txp:recent_articles"/>
+		<completion string="txp:recent_comments"/>
+		<completion string="txp:related_articles"/>
+		<completion string="txp:section_list"/>
+
+		<!-- Tags with default attributes -->
+
+		<completion string="txp:email">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> email="${1}" linktext="${2}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_article_author">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_article_category">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_article_section">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_author">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_plugin">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_section">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_status">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> status="${1}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:if_variable">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}" value="${2}">$1&lt;/${completion}></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:output_form">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> form="${1}" /></transform-into>
+				</append-dynamic>
+
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
 		<completion string="txp:search_input">
 			<behavior>
 				<append-dynamic>
@@ -23,23 +182,140 @@
 				<partial-confirm characters=":_"/>
 			</behavior>
 		</completion>
+
+		<completion string="txp:text">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> item="${1}" /></transform-into>
+				</append-dynamic>
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
+
+		<completion string="txp:variable">
+			<behavior>
+				<append-dynamic>
+					<matched-suffix>(\s*)|$</matched-suffix>
+					<transform-into> name="${1}" /></transform-into>
+				</append-dynamic>
+				<partial-confirm characters=":_"/>
+			</behavior>
+		</completion>
 	</set>
-	
+
 	<set name="it.coloriamoci.textpattern.tags.standalone">
 		<behavior>
 			<append-dynamic>
 				<matched-suffix>(\s*)|$</matched-suffix>
-				<transform-into>/></transform-into>
+				<transform-into> /></transform-into>
 			</append-dynamic>
 			<partial-confirm characters=":_"/>
 		</behavior>
-		
-		<!-- Define completion strings for self-closing tags without default attributes here: -->
+
+		<!-- Self-closing tags without default attributes -->
+		<completion string="txp:article_id"/>
+		<completion string="txp:article_image"/>
+		<completion string="txp:article_url_title"/>
+		<completion string="txp:author"/>
+		<completion string="txp:author_email"/>
+		<completion string="txp:body"/>
+		<completion string="txp:breadcrumb"/>
+		<completion string="txp:category"/>
+		<completion string="txp:category1"/>
+		<completion string="txp:category2"/>
 		<completion string="txp:comment_anchor"/>
+		<completion string="txp:comment_email"/>
+		<completion string="txp:comment_email_input"/>
+		<completion string="txp:comment_id"/>
+		<completion string="txp:comment_message"/>
+		<completion string="txp:comment_message_input"/>
+		<completion string="txp:comment_name"/>
+		<completion string="txp:comment_name_input"/>
+		<completion string="txp:comment_permlink"/>
+		<completion string="txp:comment_preview"/>
+		<completion string="txp:comment_remember"/>
+		<completion string="txp:comment_submit"/>
+		<completion string="txp:comment_time"/>
+		<completion string="txp:comment_web"/>
+		<completion string="txp:comment_web_input"/>
+		<completion string="txp:comments"/>
+		<completion string="txp:comments_count"/>
+		<completion string="txp:comments_error"/>
+		<completion string="txp:comments_form"/>
+		<completion string="txp:comments_help"/>
+		<completion string="txp:comments_invite"/>
+		<completion string="txp:comments_preview"/>
+		<completion string="txp:custom_field"/>
+		<completion string="txp:css"/>
+		<completion string="txp:error_message"/>
+		<completion string="txp:error_status"/>
+		<completion string="txp:excerpt"/>
+		<completion string="txp:expires"/>
+		<completion string="txp:feed_link"/>
+		<completion string="txp:file_download"/>
+		<completion string="txp:file_download_author"/>
+		<completion string="txp:file_download_category"/>
+		<completion string="txp:file_download_created"/>
+		<completion string="txp:file_download_description"/>
+		<completion string="txp:file_download_downloads"/>
+		<completion string="txp:file_download_id"/>
+		<completion string="txp:file_download_modified"/>
+		<completion string="txp:file_download_name"/>
+		<completion string="txp:file_download_size"/>
+		<completion string="txp:image"/>
+		<completion string="txp:image_author"/>
+		<completion string="txp:image_date"/>
+		<completion string="txp:image_display"/>
+		<completion string="txp:image_index"/>
+		<completion string="txp:image_info"/>
+		<completion string="txp:image_url"/>
+		<completion string="txp:keywords"/>
+		<completion string="txp:lang"/>
+		<completion string="txp:link"/>
+		<completion string="txp:link_author"/>
+		<completion string="txp:link_category"/>
+		<completion string="txp:link_date"/>
+		<completion string="txp:link_description"/>
+		<completion string="txp:link_feed_link"/>
+		<completion string="txp:link_id"/>
+		<completion string="txp:link_name"/>
+		<completion string="txp:link_url"/>
+		<completion string="txp:link_to_next"/>
+		<completion string="txp:link_to_prev"/>
+		<completion string="txp:linkdesctitle"/>
+		<completion string="txp:meta_author"/>
+		<completion string="txp:meta_keywords"/>
+		<completion string="txp:modified"/>
+		<completion string="txp:next_title"/>
+		<completion string="txp:newer"/>
+		<completion string="txp:older"/>
+		<completion string="txp:page_title"/>
+		<completion string="txp:page_url"/>
+		<completion string="txp:password_protect"/>
+		<completion string="txp:permlink"/>
+		<completion string="txp:popup"/>
+		<completion string="txp:posted"/>
+		<completion string="txp:prev_title"/>
+		<completion string="txp:rsd"/>
+		<completion string="txp:search_result_count"/>
+		<completion string="txp:search_result_date"/>
+		<completion string="txp:search_result_excerpt"/>
+		<completion string="txp:search_result_title"/>
+		<completion string="txp:search_result_url"/>
+		<completion string="txp:search_term"/>
+		<completion string="txp:section"/>
+		<completion string="txp:site_name"/>
+		<completion string="txp:site_slogan"/>
+		<completion string="txp:site_url"/>
+		<completion string="txp:title"/>
+		<completion string="txp:thumbnail"/>
+		<completion string="txp:txp_die"/>
+		<completion string="txp:yield"/>
 	</set>
-	
-	<!-- Map out custom tag attributes below, just like in the bundled HTML plugin: -->
-	
+
+	<!-- Tag attribute definitions -->
+
 	<behavior>
 		<append-dynamic>
 			<matched-suffix>(\s*=)|[^=]</matched-suffix>
@@ -48,15 +324,667 @@
 		<confirm characters="="/>
 		<partial-confirm characters="-"/>
 	</behavior>
-	
+
+	<set name="it.coloriamoci.textpattern.txp:article.attributes">
+		<completion string="allowoverride"/>
+		<completion string="break"/>
+		<completion string="class"/>
+		<completion string="form"/>
+		<completion string="keywords"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="listform"/>
+		<completion string="offset"/>
+		<completion string="pageby"/>
+		<completion string="pgonly"/>
+		<completion string="searchall"/>
+		<completion string="searchform"/>
+		<completion string="searchsticky"/>
+		<completion string="sort"/>
+		<completion string="status"/>
+		<completion string="time"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:article_custom.attributes">
+		<completion string="allowoverride"/>
+		<completion string="author"/>
+		<completion string="break"/>
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="excerpted"/>
+		<completion string="expired"/>
+		<completion string="form"/>
+		<completion string="id"/>
+		<completion string="keywords"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="listform"/>
+		<completion string="month"/>
+		<completion string="offset"/>
+		<completion string="pageby"/>
+		<completion string="pgonly"/>
+		<completion string="searchall"/>
+		<completion string="searchform"/>
+		<completion string="searchsticky"/>
+		<completion string="sort"/>
+		<completion string="status"/>
+		<completion string="time"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:article_image.attributes">
+		<completion string="class"/>
+		<completion string="escape"/>
+		<completion string="height"/>
+		<completion string="html_id"/>
+		<completion string="style"/>
+		<completion string="thumbnail"/>
+		<completion string="width"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:author.attributes">
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:author_email.attributes">
+		<completion string="escape"/>
+		<completion string="link"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:breadcrumb.attributes">
+		<completion string="class"/>
+		<completion string="label"/>
+		<completion string="link"/>
+		<completion string="linkclass"/>
+		<completion string="separator"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:category.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="name"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="type"/>
+		<completion string="url"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:category_list.attributes">
+		<completion string="active_class"/>
+		<completion string="break"/>
+		<completion string="categories"/>
+		<completion string="children"/>
+		<completion string="class"/>
+		<completion string="exclude"/>
+		<completion string="form"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="parent"/>
+		<completion string="section"/>
+		<completion string="sort"/>
+		<completion string="this_section"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:category1.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:category2.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comment_name.attributes">
+		<completion string="link"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comment_permlink.attributes">
+		<completion string="anchor"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comment_time.attributes">
+		<completion string="format"/>
+		<completion string="gmt"/>
+		<completion string="lang"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comments.attributes">
+		<completion string="break"/>
+		<completion string="breakclass"/>
+		<completion string="class"/>
+		<completion string="form"/>
+		<completion string="limit"/>
+		<completion string="offset"/>
+		<completion string="sort"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comments_error.attributes">
+		<completion string="break"/>
+		<completion string="class"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comments_form.attributes">
+		<completion string="class"/>
+		<completion string="forgetlabel"/>
+		<completion string="form"/>
+		<completion string="isize"/>
+		<completion string="msgcols"/>
+		<completion string="msgrows"/>
+		<completion string="msgstyle"/>
+		<completion string="previewlabel"/>
+		<completion string="rememberlabel"/>
+		<completion string="submitlabel"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comments_invite.attributes">
+		<completion string="class"/>
+		<completion string="showalways"/>
+		<completion string="showcount"/>
+		<completion string="textonly"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:comments_preview.attributes">
+		<completion string="class"/>
+		<completion string="form"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:css.attributes">
+		<completion string="format"/>
+		<completion string="media"/>
+		<completion string="name"/>
+		<completion string="rel"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:custom_field.attributes">
+		<completion string="default"/>
+		<completion string="escape"/>
+		<completion string="name"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:email.attributes">
+		<completion string="email"/>
+		<completion string="linktext"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:expires.attributes">
+		<completion string="class"/>
+		<completion string="format"/>
+		<completion string="gmt"/>
+		<completion string="lang"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:feed_link.attributes">
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="flavor"/>
+		<completion string="format"/>
+		<completion string="label"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download.attributes">
+		<completion string="filename"/>
+		<completion string="form"/>
+		<completion string="id"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_author.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_category.attributes">
+		<completion string="class"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_created.attributes">
+		<completion string="format"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_description.attributes">
+		<completion string="class"/>
+		<completion string="escape"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_link.attributes">
+		<completion string="filename"/>
+		<completion string="id"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_list.attributes">
+		<completion string="author"/>
+		<completion string="auto_detect"/>
+		<completion string="break"/>
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="extension"/>
+		<completion string="form"/>
+		<completion string="id"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="offset"/>
+		<completion string="pageby"/>
+		<completion string="realname"/>
+		<completion string="sort"/>
+		<completion string="status"/>
+		<completion string="thumbnail"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_modified.attributes">
+		<completion string="format"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_name.attributes">
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:file_download_size.attributes">
+		<completion string="decimals"/>
+		<completion string="format"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_article_author.attributes">
+		<completion string="name"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_article_category.attributes">
+		<completion string="name"/>
+		<completion string="number"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_article_id.attributes">
+		<completion string="id"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_article_section.attributes">
+		<completion string="name"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_author.attributes">
+		<completion string="name"/>
+		<completion string="type"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_category.attributes">
+		<completion string="name"/>
+		<completion string="type"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_custom_field.attributes">
+		<completion string="match"/>
+		<completion string="name"/>
+		<completion string="separator"/>
+		<completion string="value"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_keywords.attributes">
+		<completion string="keywords"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_plugin.attributes">
+		<completion string="name"/>
+		<completion string="version"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_search_results.attributes">
+		<completion string="max"/>
+		<completion string="min"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_section.attributes">
+		<completion string="name"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_status.attributes">
+		<completion string="status"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:if_variable.attributes">
+		<completion string="name"/>
+		<completion string="value"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:image.attributes">
+		<completion string="class"/>
+		<completion string="escape"/>
+		<completion string="height"/>
+		<completion string="html_id"/>
+		<completion string="id"/>
+		<completion string="name"/>
+		<completion string="style"/>
+		<completion string="width"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:image_author.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:image_date.attributes">
+		<completion string="id"/>
+		<completion string="format"/>
+		<completion string="name"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:image_index.attributes">
+		<completion string="break"/>
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="offset"/>
+		<completion string="sort"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:images.attributes">
+		<completion string="author"/>
+		<completion string="auto_detect"/>
+		<completion string="break"/>
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="extension"/>
+		<completion string="form"/>
+		<completion string="html_id"/>
+		<completion string="id"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="name"/>
+		<completion string="offset"/>
+		<completion string="pageby"/>
+		<completion string="realname"/>
+		<completion string="sort"/>
+		<completion string="thumbnail"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link.attributes">
+		<completion string="rel"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_author.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_category.attributes">
+		<completion string="class"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_date.attributes">
+		<completion string="format"/>
+		<completion string="gmt"/>
+		<completion string="lang"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_description.attributes">
+		<completion string="class"/>
+		<completion string="escape"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_feed_link.attributes">
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="flavor"/>
+		<completion string="format"/>
+		<completion string="label"/>
+		<completion string="title"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_name.attributes">
+		<completion string="escape"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_to_home.attributes">
+		<completion string="class"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_to_next.attributes">
+		<completion string="showalways"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:link_to_prev.attributes">
+		<completion string="showalways"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:linkdesctitle.attributes">
+		<completion string="rel"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:linklist.attributes">
+		<completion string="author"/>
+		<completion string="auto_detect"/>
+		<completion string="break"/>
+		<completion string="category"/>
+		<completion string="class"/>
+		<completion string="extension"/>
+		<completion string="form"/>
+		<completion string="html_id"/>
+		<completion string="id"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="limit"/>
+		<completion string="offset"/>
+		<completion string="pageby"/>
+		<completion string="realname"/>
+		<completion string="sort"/>
+		<completion string="thumbnail"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:meta_author.attributes">
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:modified.attributes">
+		<completion string="class"/>
+		<completion string="format"/>
+		<completion string="gmt"/>
+		<completion string="lang"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:newer.attributes">
+		<completion string="escape"/>
+		<completion string="showalways"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:older.attributes">
+		<completion string="escape"/>
+		<completion string="showalways"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:output_form.attributes">
+		<completion string="form"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:page_title.attributes">
+		<completion string="separator"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:page_url.attributes">
+		<completion string="type"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:password_protect.attributes">
+		<completion string="login"/>
+		<completion string="pass"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:permlink.attributes">
+		<completion string="class"/>
+		<completion string="id"/>
+		<completion string="style"/>
+		<completion string="title"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:popup.attributes">
+		<completion string="class"/>
+		<completion string="label"/>
+		<completion string="section"/>
+		<completion string="this_section"/>
+		<completion string="type"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:posted.attributes">
+		<completion string="class"/>
+		<completion string="format"/>
+		<completion string="gmt"/>
+		<completion string="lang"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:related_articles.attributes">
+		<completion string="break"/>
+		<completion string="class"/>
+		<completion string="form"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="match"/>
+		<completion string="no_widow"/>
+		<completion string="section"/>
+		<completion string="sort"/>
+		<completion string="wraptag"/>
+	</set>
+
 	<set name="it.coloriamoci.textpattern.txp:search_input.attributes">
-		<completion string="button" />
-		<completion string="form" />
-		<completion string="html_id" />
-		<completion string="match" />
-		<completion string="section" />
-		<completion string="size" />
-		<completion string="label" />
-		<completion string="wraptag" />
+		<completion string="button"/>
+		<completion string="class"/>
+		<completion string="form"/>
+		<completion string="html_id"/>
+		<completion string="label"/>
+		<completion string="match"/>
+		<completion string="section"/>
+		<completion string="size"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:search_result_count.attributes">
+		<completion string="text"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:search_result_excerpt.attributes">
+		<completion string="break"/>
+		<completion string="hilight"/>
+		<completion string="limit"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:section.attributes">
+		<completion string="class"/>
+		<completion string="link"/>
+		<completion string="name"/>
+		<completion string="title"/>
+		<completion string="url"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:section_list.attributes">
+		<completion string="active_class"/>
+		<completion string="break"/>
+		<completion string="class"/>
+		<completion string="default_title"/>
+		<completion string="exclude"/>
+		<completion string="label"/>
+		<completion string="labeltag"/>
+		<completion string="form"/>
+		<completion string="include_default"/>
+		<completion string="sections"/>
+		<completion string="sort"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:text.attributes">
+		<completion string="item"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:thumbnail.attributes">
+		<completion string="class"/>
+		<completion string="escape"/>
+		<completion string="height"/>
+		<completion string="html_id"/>
+		<completion string="id"/>
+		<completion string="link"/>
+		<completion string="link_rel"/>
+		<completion string="name"/>
+		<completion string="poplink"/>
+		<completion string="style"/>
+		<completion string="width"/>
+		<completion string="wraptag"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:title.attributes">
+		<completion string="no_widow"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:txp_die.attributes">
+		<completion string="msg"/>
+		<completion string="status"/>
+		<completion string="url"/>
+	</set>
+
+	<set name="it.coloriamoci.textpattern.txp:variable.attributes">
+		<completion string="name"/>
+		<completion string="value"/>
 	</set>
 </codesense>
